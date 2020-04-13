@@ -5,6 +5,7 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :address
       t.integer :age
       t.boolean :has_animals
+      t.text :bio
 
       t.timestamps
     end

@@ -12,11 +12,11 @@ AdoptionProcess.destroy_all
 #   Character.create(name: 'Luke', movie: movies.first)
 
 shelter1 = Shelter.create()
- 10.times {Animal.create(name: Faker::Creature::Dog.name, breed: Faker::Creature::Dog.breed, shelter_id: shelter1.id, bio: Faker::Creature::Dog.meme_phrase, age: rand(1..15))}
+10.times {Animal.create(name: Faker::Creature::Dog.name, breed: Faker::Creature::Dog.breed, shelter_id: shelter1.id, bio: Faker::Creature::Dog.meme_phrase, age: rand(1..15))}
 
 
-15.times {User.create(name: Faker::Name.name, address: Faker::Address.street_address, age: rand(20..90)), has_animals: [true, false].sample)}
+15.times {User.create(name: Faker::Name.name, address: Faker::Address.street_address, age: rand(20..90), has_animals: [true, false].sample, bio: Faker::Quotes::Shakespeare.as_you_like_it_quote)}
 
 
-5.times{AdoptionProcess.create(animal_id: Animal.all.sample, user_id: User.all.sample, status: ["approved", "declined", "pending"].sample, meeting_date: Faker::Date.forward(days: 14) )}
+5.times{AdoptionProcess.create(animal: Animal.all.sample, user: User.all.sample, status: ["approved", "declined", "pending"].sample, meeting_date: Faker::Date.forward(days: 14) )}
 

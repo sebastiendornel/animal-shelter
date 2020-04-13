@@ -1,0 +1,11 @@
+<h1>All Our Amazing Friends</h1>
+
+<h4><ul>
+    <% @animals.each do |animal| %>
+        <li>Name: <%= link_to animal.name, animal_path(animal) %> - Breed: <%= animal.breed %></li>
+        <br><br>
+    <% end %>
+</ul></h4>
+
+
+
