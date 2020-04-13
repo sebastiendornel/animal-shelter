@@ -1,0 +1,2 @@
+class AdoptionProcessesController < ApplicationController
+end
