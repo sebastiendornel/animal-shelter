@@ -2,12 +2,14 @@ Rails.application.routes.draw do
 
   # root to: 'shelters#index'
   resources :shelters
-  resources :animals
-  resources :adoption_processes
+  resources :animals do
+    resources :adoption_processes
+  end
+
   resources :users
 
-  get '/adoption_process/new', to: 'adoption_processes#new', as: '/adoption_form'
-
+  # get '/adoption_process/new', to: 'adoption_processes#new', as: '/adoption_form'
+  # get '/animals/:id/adopt' to 
   # get '/snacks/:id', to: "snacks#show", as: "snack"
 
   get '/login', to: "sessions#login"

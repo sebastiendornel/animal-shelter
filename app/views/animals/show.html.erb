@@ -11,4 +11,4 @@
 <% if session[:user_id].nil? %>
    <div><%= link_to "Log In to Adopt", login_path %> </div> 
    <% end %>
-<%= link_to 'Adopt This Animal', adoption_process_path(@animal) %>
+<%= link_to 'Adopt This Animal', new_animal_adoption_process_path(@animal) %>
