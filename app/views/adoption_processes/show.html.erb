@@ -1,0 +1,10 @@
+<h1>Apply to Adopt this Furry Friend</h1>
+<br>
+<%= form_for @adoption_process do |f|%>
+<%= f.label :animal %>
+<%= f.text_field :animal, value: @animal.name %>
+<%= f.label :user %>
+<%= f.text_field :user, value: @user.name %>
+<%= f.submit "Apply" %>
+<% end %>
+

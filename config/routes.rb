@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   resources :adoption_processes
   resources :users
 
+  get '/adoption_process/new', to: 'adoption_processes#new', as: '/adoption_form'
+
+  # get '/snacks/:id', to: "snacks#show", as: "snack"
+
   get '/login', to: "sessions#login"
   post '/login', to: "sessions#process_login"
   get '/logout', to: "sessions#logout"
