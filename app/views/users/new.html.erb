@@ -3,12 +3,14 @@
 <%= form_for @user do |u| %>
 <%= u.label :name %>
 <%= u.text_field :name %>
+<%= u.label :password %>
+<%= u.password_field :password %>
 <%= u.label :address %>
 <%= u.text_field :address %>
 <%= u.label :age %>
-<%= u.text_field :age %>
+<%= u.number_field :age %>
 <%= u.label :bio %>
 <%= u.text_field :bio %>
-<%= u.submit %>
+<%= u.submit "Sign Up" %>
 <% end %>
 <br>

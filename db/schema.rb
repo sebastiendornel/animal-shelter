@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 2020_04_13_185925) do
     t.integer "age"
     t.boolean "has_animals"
     t.text "bio"
+    t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

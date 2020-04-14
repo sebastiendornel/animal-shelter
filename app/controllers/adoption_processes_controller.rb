@@ -2,15 +2,21 @@ class AdoptionProcessesController < ApplicationController
     before_action :find_adoption_processes, only: [:show, :edit, :update, :destroy]
     
     def show
-
+        
     end
 
     def new
-
+        @adoption_process = AdoptionProcess.new
     end
 
     def create
-
+        @adoption_process = AdoptionProcess.new(adoption_params)
+        if @adoption_process.valid?
+            @adoption_process.save
+            redirect_to adoption_path(@adoption_process)
+        else
+            render :new
+        end
     end
 
     def edit
@@ -18,7 +24,9 @@ class AdoptionProcessesController < ApplicationController
     end
 
     def update
-
+        @adoption_process.update(adoption_params)
+        redirect_to adoption_path(@adoption_process)
+        render :edit
     end
 
     def destroy
