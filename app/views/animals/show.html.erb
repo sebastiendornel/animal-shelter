@@ -8,4 +8,7 @@
 <br>
 <br>
 <%= link_to 'View All Animals', animals_path %> 
-
+<% if session[:user_id].nil? %>
+   <div><%= link_to "Log In to Adopt", login_path %> </div> 
+   <% end %>
+<%= link_to 'Adopt This Animal' %>
